@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'user8.dart';
+import '../widgets/boton1.dart';
+import 'principal_usuario.dart';
 
 /// This Widget is the main application widget.
-class SeptimoRoute extends StatelessWidget {
+class Confirmardireccion_page extends StatelessWidget {
   final azul_clarito = const Color(0xFF3ECCCD);
   final cafe=const Color(0xFF505050);
 
@@ -43,10 +44,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final color = const Color(0xFF050505);
   final azulito= const Color(0xFF3ECCCD);
 
-  _onChanged() {
+  ir_menuusuario() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => OctavoRoute()),
+      MaterialPageRoute(builder: (context) => Principal_usuario_page()),
     );
   }
 
@@ -60,6 +61,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           margin: const EdgeInsets.all(10.0),
           padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(
+    const Radius.circular(10.0),
+    ),
             border: Border.all(),
           ), //       <--- BoxDecoration here
           child: Text(
@@ -93,7 +97,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 child: SizedBox(
                   //width: double.infinity, // match_parent
                   child: RaisedButton(
-
                     child: Text(
                       "Corregir",
                       style: TextStyle(
@@ -104,7 +107,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(50.0),
                         side: BorderSide(color: azulito)),
-                    onPressed: _onChanged,
+                    onPressed: ir_menuusuario,
                     highlightColor: Colors.white,
                     color:
                     Colors.white, //specify background color  of button from our list of colors
@@ -122,7 +125,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   top: 10,
                   left: 10,
                   right: 10,
-                  bottom: 10,
+                  bottom: 20,
                 ),
                 child:Text(
                     "¿Es la direccion de?",
@@ -132,87 +135,32 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                SizedBox(
-                  width: 50,
-                  height: 50,// match_parent
-                  child: RaisedButton(
-                    shape: CircleBorder(),
-                    color: Colors.black,
-                    onPressed: () {
-
-                    },
-                    child: Image(
-                      fit: BoxFit.contain,
-                      color: Colors.white,
-                      image: AssetImage('assets/icono_oficina.png'),
-                    ),
-                  ),
+                Boton3(
+                    onChanged: ir_menuusuario,
+                    palabra: "Casa",
+                    imagen:'assets/icono_casa.png',
+                    xy: 50,
                 ),
-                SizedBox(
-                  width: 50,
-                  height: 50,// match_parent
-                  child: RaisedButton(
-                    shape: CircleBorder(),
-                    color: Colors.black,
-                    onPressed: () {
-
-                    },
-                    child: Image(
-                      fit: BoxFit.contain,
-                      image: AssetImage('assets/icono_otro.png'),
-                    ),
-                  ),
+                Boton3(
+                  onChanged: ir_menuusuario,
+                  palabra: "Oficina",
+                  imagen:'assets/icono_oficina.png',
+                  xy: 50,
                 ),
-                SizedBox(
-                  width: 50,
-                  height: 50,// match_parent
-                  child: RaisedButton(
-                    shape: CircleBorder(),
-                    color: Colors.black,
-                    onPressed: () {
-
-                    },
-                    child: Image(
-                      fit: BoxFit.contain,
-                      color: Colors.white,
-                      image: AssetImage('assets/icono_casa.png'),
-                    ),
-                  ),
+                Boton3(
+                  onChanged: ir_menuusuario,
+                  palabra: "Otro",
+                  imagen:'assets/icono_otro.png',
+                  xy: 50,
                 ),
               ],
             ),
           ],
         ),
-
-        Align(
-          alignment: Alignment.center,
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: 10,
-              left: 10,
-              right: 10,
-            ),
-            child: SizedBox(
-              width: double.infinity, // match_parent
-              child: RaisedButton(
-                child: Text(
-                  "Continuar",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(50.0),
-                    side: BorderSide(color: Colors.black)),
-                onPressed: _onChanged,
-                highlightColor: Colors.white,
-                color:
-                color, //specify background color  of button from our list of colors
-              ),
-            ),
-          ),
-        ),
+        Boton1(
+            onChanged: ir_menuusuario,
+            palabra: "Continuar"
+        )
       ],
     );
   }

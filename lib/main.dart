@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'boton_widget.dart';
 import 'botones.dart';
+import  'src/pages/inicio_page.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -10,9 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: "",
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: new Scaffold(
         body: new Center(
-          child: new Boton_Widget(),
+          child: new Inicio_page(),
         ),
       ),
     );

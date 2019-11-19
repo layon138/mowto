@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'user4.dart';
-import 'mecanico4.dart';
+import 'package:flutter_app/src/pages/documento_mecanico_page.dart';
 
 class ButtonDemo extends StatefulWidget {
   @override
@@ -70,10 +70,7 @@ class ButtonDemoState extends State<ButtonDemo> {
                     shape: CircleBorder(),
                     color: Colors.black,
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => mecanico7()),
-                      );
+
                     },
                     child: Image(
                       fit: BoxFit.contain,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'user6.dart';
+import 'package:flutter_app/src/pages/dondenecesitas_page.dart';
 import 'package:flutter/gestures.dart';
 
 
@@ -42,10 +42,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final color = const Color(0xFF050505);
 
   _onChanged() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => SextoRoute()),
-    );
+
   }
 
   @override
